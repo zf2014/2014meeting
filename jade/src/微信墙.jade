@@ -1,0 +1,143 @@
+extends ../layout/base.jade
+
+block head-title
+	title 口岸年会-微信墙
+
+block main-title
+	h1.main-title.main-title--wxq
+
+//- append head-script
+//- 	script.
+//- 		var currentSigninAmounts = 0
+
+block main-content
+
+	.wxq-main
+		.wxq-main--left
+			.wxq-left--bg
+				.wxq-left--content
+					.wxq-signin
+						.wxq-signin--total
+							span.total-txt 现场已有
+							.total-amount#J-signinNumCardContainer(data-signin-num="93" data-ajax-url="/cgoWeixin/screen/loginUser.jspa")
+								.total-card.J-signinNumCard
+									span.card-figure 0
+									//- span.card-figure 1
+								.total-card.J-signinNumCard
+									span.card-figure 0
+									//- span.card-figure 1
+								.total-card.J-signinNumCard#J-signinNumLastCard
+									span.card-figure 0
+									//- span.card-figure 1
+							span.total-txt 位
+						.wxq-signin--entered-employee
+							ul.entered-employee--list#J-signinUserinfoList
+								li.entered-employee--item
+									.entered-employee--left
+										.employee-avatar.entered-avatar
+											img(src="#{imgRoot}/test/photo.jpg")
+									.entered-employee--right
+										.entered-txt 钱雄伟
+										.entered-txt 进入现场
+
+								li.entered-employee--item
+									.entered-employee--left
+										.employee-avatar.entered-avatar
+											img(src="#{imgRoot}/test/photo.jpg")
+									.entered-employee--right
+										.entered-txt 钱雄伟
+										.entered-txt 进入现场
+								li.entered-employee--item
+									.entered-employee--left
+										.employee-avatar.entered-avatar
+											img(src="#{imgRoot}/test/photo.jpg")
+									.entered-employee--right
+										.entered-txt 钱雄伟
+										.entered-txt 进入现场
+
+								li.entered-employee--item
+									
+									.entered-employee--left
+										.employee-avatar.entered-avatar
+											img(src="#{imgRoot}/test/photo.jpg")
+									.entered-employee--right
+										.entered-txt 钱雄伟
+										.entered-txt 进入现场
+
+
+
+
+
+		.wxq-main--right
+			.wxq-right--content
+				.wxq-chat
+					ul.chat-list#J-chatRecordContainer(data-face-root="#{imgRoot}/face/" data-ajax-url="/cgoWeixin/screen/chat.jspa")
+						script.
+							var chatInitRecords = [
+									{userHead: '#{imgRoot}/test/photo.jpg', message: '今天年会好高兴啊<br/>今天年会好高兴啊今天年会好高兴啊', nikeName: '钱雄伟'}
+								];
+						li.chat-item
+							.card-light.card-light__ver.card-light__chat-left
+							.card-light.card-light__ver.card-light__chat-right
+							.card-light.card-light__hor.card-light__chat-top
+							.card-light.card-light__hor.card-light__chat-bottom
+							.chat-item--left
+								.chat-avatar.employee-avatar
+									img(src="#{imgRoot}/test/photo.jpg")
+								.chat-name 钱雄伟：
+							.chat-item--right
+								.chat-content
+									| 今天年会好高兴啊
+						li.chat-item
+							.card-light.card-light__ver.card-light__chat-left
+							.card-light.card-light__ver.card-light__chat-right
+							.card-light.card-light__hor.card-light__chat-top
+							.card-light.card-light__hor.card-light__chat-bottom
+							.chat-item--left
+								.chat-avatar.employee-avatar
+									img(src="#{imgRoot}/test/photo.jpg")
+								.chat-name 钱雄伟：
+							.chat-item--right
+								.chat-content
+									| 今天年会好高兴啊今天年会好高兴啊今天年会好高兴啊
+						//- li.chat-item
+						//- 	.card-light.card-light__ver.card-light__chat-left
+						//- 	.card-light.card-light__ver.card-light__chat-right
+						//- 	.card-light.card-light__hor.card-light__chat-top
+						//- 	.card-light.card-light__hor.card-light__chat-bottom
+						//- 	.chat-item--left
+						//- 		.chat-avatar.employee-avatar
+						//- 			img(src="#{imgRoot}/test/photo.jpg")
+						//- 		.chat-name 钱雄伟：
+						//- 	.chat-item--right
+						//- 		.chat-content
+						//- 			| 今天年会好高兴啊
+						//- li.chat-item
+						//- 	.card-light.card-light__ver.card-light__chat-left
+						//- 	.card-light.card-light__ver.card-light__chat-right
+						//- 	.card-light.card-light__hor.card-light__chat-top
+						//- 	.card-light.card-light__hor.card-light__chat-bottom
+						//- 	.chat-item--left
+						//- 		.chat-avatar.employee-avatar
+						//- 			img(src="#{imgRoot}/test/photo.jpg")
+						//- 		.chat-name 钱雄伟：
+						//- 	.chat-item--right
+						//- 		.chat-content
+						//- 			| 今天年会好高兴啊今天年会好高兴啊今天年会好高兴啊
+						//- li.chat-item
+						//- 	.card-light.card-light__ver.card-light__chat-left
+						//- 	.card-light.card-light__ver.card-light__chat-right
+						//- 	.card-light.card-light__hor.card-light__chat-top
+						//- 	.card-light.card-light__hor.card-light__chat-bottom
+						//- 	.chat-item--left
+						//- 		.chat-avatar.employee-avatar
+						//- 			img(src="#{imgRoot}/test/photo.jpg")
+						//- 		.chat-name 钱雄伟：
+						//- 	.chat-item--right
+						//- 		.chat-content
+						//- 			| 今天年会好高兴啊今天年会好高兴啊
+
+append floor-script
+	script(src = '#{jsRoot}/app/face.js?v=#{version}')
+	script(src = '#{jsRoot}/app/chat-receive.js?v=#{version}' asyn)
+	script(src = '#{jsRoot}/app/signin-receive.js?v=#{version}' asyn)

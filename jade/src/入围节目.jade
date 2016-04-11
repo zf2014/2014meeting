@@ -1,0 +1,63 @@
+extends ../layout/base.jade
+
+append bodyHtmlVar
+	- var bodyClassname  = 'body-bg2'
+block head-title
+	title 口岸年会-微信墙
+
+block main-title
+	h1.main-title.main-title--candidate-show
+
+//- append head-script
+//- 	script(src = '#{jsRoot}/lib/fx.js?v=#{version}')
+
+//- append head-script
+//- 	script.
+//- 		var currentSigninAmounts = 0
+
+block main-content
+	.candidate-content
+		.winner-flashlight.winner-flashlight__small.winner-flashlight__reverse(style="left: -30px;top: 80px;")
+		.winner-flashlight.winner-flashlight__big.winner-flashlight__reverse(style="left: -542px;top: 15px;")
+		.winner-flashlight.winner-flashlight__small(style="right: 463px;top: 80px;")
+		.winner-flashlight.winner-flashlight__big(style="right: 100px;top: 15px;")
+
+		.candidate-show
+			//- .candidate-show--bg
+			.show-rank
+				.show-rank--bar.J-showRankBar(data-vote-amount="80")
+					.show-rank--photo
+						img(src="#{imgRoot}/test/2.jpg")
+					.show-rank--votes
+						span.J-showRankAmount 0
+						span 票
+					.show-rank--name
+						span 《不要 不要》
+						span 开发部
+				.show-rank--bar.J-showRankBar(data-vote-amount="225")
+					.show-rank--photo
+						img(src="#{imgRoot}/test/2.jpg")
+					.show-rank--votes
+						span.J-showRankAmount 0
+						span 票
+					.show-rank--name
+						span 《不要 不要》
+						span 开发部
+				.show-rank--bar.J-showRankBar(data-vote-amount="120")
+					.show-rank--photo
+						img(src="#{imgRoot}/test/2.jpg")
+					.show-rank--votes
+						span.J-showRankAmount 0
+						span 票
+					.show-rank--name
+						span 《不要 不要》
+						span 开发部
+
+append floor-script
+	script(src = '#{jsRoot}/app/candidate-showBar.js?v=#{version}' asyn)
+
+
+
+
+
+
